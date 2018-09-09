@@ -35,6 +35,7 @@ public class SampleDAO extends AbstractDAO {
 
 	public void deleteBoard(Map<String, Object> map) {
 		update("deleteBoard", map);
+<<<<<<< HEAD
 	}
 	
 	public void insertFile(Map<String, Object> map) {
@@ -44,6 +45,8 @@ public class SampleDAO extends AbstractDAO {
 	@SuppressWarnings("unchecked")
 	public List<Map<String,Object>> selectFileList(Map<String, Object> map) {
 	    return (List<Map<String,Object>>)selectList("selectFileList",map);
+=======
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 	}
 
 }

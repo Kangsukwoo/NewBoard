@@ -9,7 +9,11 @@ public interface SampleService {
 
 	List<Map<String, Object>> selectBoardList(Map<String, Object> map);
 
+<<<<<<< HEAD
 	void writeBoard(Map<String, Object> map, HttpServletRequest req) throws Exception;
+=======
+	void writeBoard(Map<String, Object> map);
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 
 	Map<String, Object> selectBoard(Map<String, Object> map);
 

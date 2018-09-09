@@ -55,9 +55,15 @@ public class SampleController {
 
 	// 글쓰기
 	@RequestMapping(value = "/sample/writeBoard")
+<<<<<<< HEAD
 	public ModelAndView writeBoard(CommandMap commandMap, HttpServletRequest req) throws Exception {
 		ModelAndView mv = new ModelAndView("redirect:/sample/openBoardList");
 		sampleService.writeBoard(commandMap.getMap(), req);
+=======
+	public ModelAndView writeBoard(CommandMap commandMap) {
+		ModelAndView mv = new ModelAndView("redirect:/sample/openBoardList");
+		sampleService.writeBoard(commandMap.getMap());
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 		return mv;
 	}
 
@@ -66,8 +72,12 @@ public class SampleController {
 	public ModelAndView openBoardDetail(CommandMap commandMap) {
 		ModelAndView mv = new ModelAndView("/boardDetail");
 		Map<String, Object> map = sampleService.selectBoard(commandMap.getMap());
+<<<<<<< HEAD
 		mv.addObject("map", map.get("map"));	//map = 게시글 정보가 담김
 		mv.addObject("list", map.get("list"));		//list = 파일정보가 담김
+=======
+		mv.addObject("map", map);
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 		return mv;
 	}
 

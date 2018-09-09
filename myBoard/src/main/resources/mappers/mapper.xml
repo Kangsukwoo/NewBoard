@@ -17,6 +17,7 @@
         ]]>
 	</select>
 
+<<<<<<< HEAD
 	<insert id="writeBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="IDX" >
 	   <![CDATA[
 	       INSERT INTO
@@ -35,6 +36,24 @@
 	               'N',
 	               'ADMIN')
 	   ]]>
+=======
+	<insert id="writeBoard" parameterType="hashmap">
+	     <![CDATA[
+	           INSERT INTO TB_BOARD(
+	           TITLE, CONTENTS, 
+	           HIT_CNT, 
+	           DEL_GB, 
+	           CREA_ID
+	           ) 
+	           VALUES(
+	           #{TITLE},
+	           #{CONTENTS},
+	           0,
+	           'N',
+	           'ADMIN'
+	           );
+	        ]]>
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 	</insert>
 
 	<select id="selectBoard" resultType="hashmap" parameterType="hashmap">
@@ -83,6 +102,7 @@
 	           IDX=#{IDX}
 	   ]]>
 	</update>
+<<<<<<< HEAD
 	
 	<insert id="insertFile" parameterType="hashmap">
 	   <![CDATA[
@@ -118,6 +138,8 @@
 	           DEL_GB='N'
 	   ]]>
 	</select>
+=======
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 
 </mapper>
 

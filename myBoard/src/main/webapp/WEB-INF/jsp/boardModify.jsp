@@ -42,11 +42,18 @@
 			</tbody>
 		</table>
 	</form>
+<<<<<<< HEAD
 		
 	<a href="#this" id="modify" class="btn">수정하기</a>
 	<a href="#this" id="delete" class="btn">삭제하기</a>
 	<a href="#this" id="list" class="btn">목록으로</a>
 	
+=======
+	<a href="#this" id="list" class="btn">목록으로</a>
+	<a href="#this" id="modify" class="btn">수정하기</a>
+	<a href="#this" id="delete" class="btn">삭제하기</a>
+
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 	<%@ include file="/WEB-INF/include/body.jsp"%>
 	<script type="text/javascript">
 		$(document).ready(function() {

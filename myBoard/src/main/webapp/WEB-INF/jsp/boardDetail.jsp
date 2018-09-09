@@ -33,6 +33,7 @@
 				<th>내용</th>
 				<td colspan="3">${map.CONTENTS }</td>
 			</tr>
+<<<<<<< HEAD
 			<tr>
                 <th>첨부파일</th>
                 <td colspan="3">
@@ -44,6 +45,8 @@
                         </p>
                     </c:forEach>                          
             </tr>
+=======
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 		</tbody>
 	</table>
 	<a href="#this" id="list" class="btn">목록으로</a>
@@ -60,10 +63,13 @@
 				e.preventDefault();
 				fn_openBoardModify();
 			})
+<<<<<<< HEAD
 			$("a[name='file']").on("click",function(e){	//파일 다운로드
                 e.preventDefault();
                 fn_fileDownload($(this));
             })			
+=======
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 		})
 
 		function fn_openBoardList() {
@@ -78,6 +84,7 @@
 			comSubmit.addParam("IDX", idx);
 			comSubmit.submit();
 		}
+<<<<<<< HEAD
 		function fn_fileDownload(obj){	//파일 다운로드
             var comSubmit = new ComSubmit();
             comSubmit.setUrl("<c:url value='/common/downloadFile'/>");
@@ -85,6 +92,8 @@
             comSubmit.submit();
             $("#commonForm").children().remove();
         } 
+=======
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
 	</script>
 </body>
 </html>

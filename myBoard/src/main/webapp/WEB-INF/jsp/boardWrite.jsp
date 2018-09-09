@@ -7,7 +7,11 @@
 </head>
 <%@ include file="/WEB-INF/include/header.jsp" %>
 <body>
+<<<<<<< HEAD
 <form id="frm" name="frm" enctype="multipart/form-data">
+=======
+<form id="frm">
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
         <table class="board_view">
             <colgroup>
                 <col width="15%" >
@@ -17,7 +21,11 @@
             <tbody>
                 <tr>
                     <th scope="row">제목</th>
+<<<<<<< HEAD
                     <td><input type="text"  id="TITLE" name="TITLE" class="wdp_90" /></td>
+=======
+                    <td><input type="text"  name="TITLE" class="wdp_90" /></td>
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
                 </tr>
                 <tr>
                     <th scope="row">내용</th>
@@ -25,6 +33,7 @@
                 </tr>
             </tbody>
         </table>
+<<<<<<< HEAD
         <div id="fileDiv">
             <p>
                 <input type="file" name="file_0"/>
@@ -32,6 +41,11 @@
         </div>    
          <a href="#this" id="write" class="btn">글쓰기</a>
         <a href="#this" id="list" class="btn">목록으로</a>        
+=======
+         
+        <a href="#this" id="list" class="btn">목록으로</a>
+        <a href="#this" id="write" class="btn">글쓰기</a>
+>>>>>>> a05ce23ba92f07d61f47e559fc40e72713a91e26
     </form>
 <%@ include file="/WEB-INF/include/body.jsp" %>
      <script type="text/javascript">
