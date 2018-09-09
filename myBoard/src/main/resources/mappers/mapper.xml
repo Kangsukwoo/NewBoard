@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-<mapper namespace="co.kr.board.sample.service"> 
-	<select id="selectBoardList" resultType="hashmap" parameterType="hashmap" >
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.kr.board.sample.service">
+	<select id="selectBoardList" resultType="hashmap" parameterType="hashmap">
         <![CDATA[
             SELECT
                 IDX,
@@ -15,7 +15,109 @@
                 DEL_GB='N'
             ORDER BY IDX DESC
         ]]>
-     </select>
+	</select>
+
+	<insert id="writeBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="IDX" >
+	   <![CDATA[
+	       INSERT INTO
+	           TB_BOARD(
+	               IDX,
+	               TITLE,
+	               CONTENTS,
+	               HIT_CNT,
+	               DEL_GB,
+	               CREA_ID)
+	           VALUES(
+	               #{IDX},
+	               #{TITLE},
+	               #{CONTENTS},
+	               0,
+	               'N',
+	               'ADMIN')
+	   ]]>
+	</insert>
+
+	<select id="selectBoard" resultType="hashmap" parameterType="hashmap">
+	     <![CDATA[
+	       SELECT
+	           IDX,
+	           TITLE,
+	           CONTENTS,
+	           HIT_CNT,
+	           CREA_ID,
+	           CREA_DTM
+	       FROM
+	           TB_BOARD
+	       WHERE
+	           IDX=#{IDX}
+	   ]]>
+	</select>
+
+	<update id="updateHitCount" parameterType="hashmap">
+	   <![CDATA[
+	       UPDATE TB_BOARD
+	       SET
+	           HIT_CNT = HIT_CNT+1
+	       WHERE
+	           IDX=#{IDX}
+	   ]]>
+	</update>
+
+	<update id="modifyBoard" parameterType="hashmap">
+	   <![CDATA[
+	       UPDATE TB_BOARD
+	       SET
+	           TITLE=#{TITLE},
+	           CONTENTS=#{CONTENTS}
+	       WHERE
+	           IDX=#{IDX}
+	   ]]>
+	</update>
+
+	<update id="deleteBoard" parameterType="hashmap">
+		<![CDATA[
+	       UPDATE TB_BOARD
+	       SET
+	          DEL_GB= 'Y'	         
+	       WHERE
+	           IDX=#{IDX}
+	   ]]>
+	</update>
+	
+	<insert id="insertFile" parameterType="hashmap">
+	   <![CDATA[
+	       INSERT INTO TB_FILE
+	       (
+	           BOARD_IDX,
+	           ORIGINAL_FILE_NAME,
+	           STORED_FILE_NAME,
+	           FILE_SIZE,
+	           CREA_ID
+	       )
+	       VALUES
+	       (
+	           #{BOARD_IDX},
+	           #{ORIGINAL_FILE_NAME},
+	           #{STORED_FILE_NAME},
+	           #{FILE_SIZE},
+	           'ADMIN'
+	       )
+	   ]]>
+	</insert>
+	
+	<select id="selectFileList" parameterType="hashmap" resultType="hashmap">
+	   <![CDATA[
+	       SELECT
+	           IDX,
+	           ORIGINAL_FILE_NAME,
+	           ROUND(FILE_SIZE/1024) AS FILE_SIZE
+	       FROM
+	           TB_FILE
+	       WHERE
+	           BOARD_IDX=#{IDX} AND
+	           DEL_GB='N'
+	   ]]>
+	</select>
 
 </mapper>
 
