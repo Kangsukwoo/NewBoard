@@ -31,7 +31,7 @@
             </p> 
         </div>    
          <a href="#this" id="write" class="btn">글쓰기</a>
-        <a href="#this" id="list" class="btn">목록으로</a>        
+        <a href="#this" id="list" class="btn">목록으로</a>   
     </form>
 <%@ include file="/WEB-INF/include/body.jsp" %>
      <script type="text/javascript">

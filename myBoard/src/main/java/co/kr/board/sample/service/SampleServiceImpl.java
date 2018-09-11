@@ -20,10 +20,11 @@ import co.kr.board.sample.dao.SampleDAO;
 public class SampleServiceImpl implements SampleService {
 
 	Logger log = Logger.getLogger(this.getClass());
+
 	// @Resource(name = "sampleDAO")
 	@Autowired
 	private SampleDAO sampleDAO;
-	
+
 	@Autowired
 	private FileUtils fileUtils;
 
@@ -44,15 +45,17 @@ public class SampleServiceImpl implements SampleService {
 	    }
 	}
 
+
 	@Override
 	public Map<String, Object> selectBoard(Map<String, Object> map) {
 		sampleDAO.updateHitCount(map);
-		
+
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("map", sampleDAO.selectBoard(map));
 		resultMap.put("list", sampleDAO.selectFileList(map));
-		
+
 		return resultMap;
+
 	}
 
 	@Override

@@ -60,6 +60,7 @@
 				e.preventDefault();
 				fn_openBoardModify();
 			})
+
 			$("a[name='file']").on("click",function(e){	//파일 다운로드
                 e.preventDefault();
                 fn_fileDownload($(this));
@@ -78,6 +79,7 @@
 			comSubmit.addParam("IDX", idx);
 			comSubmit.submit();
 		}
+
 		function fn_fileDownload(obj){	//파일 다운로드
             var comSubmit = new ComSubmit();
             comSubmit.setUrl("<c:url value='/common/downloadFile'/>");

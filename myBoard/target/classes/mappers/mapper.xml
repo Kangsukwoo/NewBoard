@@ -17,6 +17,7 @@
         ]]>
 	</select>
 
+
 	<insert id="writeBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="IDX" >
 	   <![CDATA[
 	       INSERT INTO
@@ -83,6 +84,7 @@
 	           IDX=#{IDX}
 	   ]]>
 	</update>
+
 	
 	<insert id="insertFile" parameterType="hashmap">
 	   <![CDATA[

@@ -46,7 +46,7 @@
 	<a href="#this" id="modify" class="btn">수정하기</a>
 	<a href="#this" id="delete" class="btn">삭제하기</a>
 	<a href="#this" id="list" class="btn">목록으로</a>
-	
+
 	<%@ include file="/WEB-INF/include/body.jsp"%>
 	<script type="text/javascript">
 		$(document).ready(function() {
