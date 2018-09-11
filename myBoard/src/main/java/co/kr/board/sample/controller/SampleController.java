@@ -76,7 +76,7 @@ public class SampleController {
 	public ModelAndView openBoardModify(CommandMap commandMap) {
 		ModelAndView mv = new ModelAndView("/boardModify");
 		Map<String, Object> map = sampleService.selectBoard(commandMap.getMap());
-		mv.addObject("map", map);
+		mv.addObject("map", map.get("map"));
 		return mv;
 	}
 
