@@ -9,8 +9,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
-
-	<context:component-scan base-package="co.kr.board" />
+	<!-- controller 어노테이션스캔 -->
+	<context:component-scan base-package="co.kr.board" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<!-- aop controller단 설정 -->
+	<aop:aspectj-autoproxy/>
+    <beans:bean id="loggerAspect" class="co.kr.board.common.logger.LoggerAspect"/>
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
@@ -43,12 +49,5 @@
 		<beans:property name="suffix" value=".jsp" />
 
 	</beans:bean>
-
-	<!-- MultipartResolver 설정 -->
-	<beans:bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<beans:property name="maxUploadSize" value="100000000" />
-		<beans:property name="maxInMemorySize" value="100000000" />
-	</beans:bean>
-
+	
 </beans:beans>
