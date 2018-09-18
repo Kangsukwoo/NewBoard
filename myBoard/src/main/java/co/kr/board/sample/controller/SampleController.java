@@ -68,6 +68,7 @@ public class SampleController {
 		Map<String, Object> map = sampleService.selectBoard(commandMap.getMap());
 		mv.addObject("map", map.get("map"));	//map = 게시글 정보가 담김
 		mv.addObject("list", map.get("list"));		//list = 파일정보가 담김
+		mv.addObject("comment", map.get("comment"));	//댓글정보
 		return mv;
 	}
 
@@ -96,6 +97,33 @@ public class SampleController {
 		sampleService.deleteBoard(commandMap.getMap());
 		return mv;
 	}
+	
+	//댓글작성
+		@RequestMapping(value = "/sample/writeComment")
+		public ModelAndView writeComment(CommandMap commandMap) {
+			ModelAndView mv = new ModelAndView("redirect:/sample/openBoardDetail");
+			sampleService.writeComment(commandMap.getMap());		
+			mv.addObject("IDX", commandMap.get("IDX"));
+			return mv;
+		}
+		
+		//댓글삭제
+		@RequestMapping(value = "/sample/deleteComment")
+		public ModelAndView deleteComment(CommandMap commandMap) {
+			ModelAndView mv = new ModelAndView("redirect:/sample/openBoardDetail");
+			sampleService.deleteComment(commandMap.getMap());		
+			mv.addObject("IDX", commandMap.get("IDX"));
+			return mv;
+		}
+		
+		//댓글수정
+		@RequestMapping(value = "/sample/updateComment")
+		public ModelAndView updateComment(CommandMap commandMap) {
+			ModelAndView mv = new ModelAndView("redirect:/sample/openBoardDetail");
+			sampleService.updateComment(commandMap.getMap());		
+			mv.addObject("IDX", commandMap.get("IDX"));
+			return mv;
+		}
 
 	@RequestMapping(value = "/sample/testMapArgumentResolver")
 	public ModelAndView testMapArgumentResolver(CommandMap commandMap) throws Exception {

@@ -47,5 +47,22 @@ public class SampleDAO extends AbstractDAO {
 		return (List<Map<String, Object>>) selectList("selectFileList", map);
 
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> selectCommentList(Map<String, Object> map) {
+		return selectList("selectCommentList", map);
+	}
+	
+	public void insertComment(Map<String, Object> map) {
+		insert("insertCommet", map);
+	}
+	
+	public void deleteComment(Map<String, Object> map) {
+		delete("deleteComment", map);
+	}
+	
+	public void updateComment(Map<String, Object> map) {
+		update("updateComment", map);
+	}
 
 }

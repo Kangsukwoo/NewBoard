@@ -16,5 +16,11 @@ public interface SampleService {
 	void modifyBoard(Map<String, Object> map);
 
 	void deleteBoard(Map<String, Object> map);
+	
+	void writeComment(Map<String, Object> map);
+	
+	void deleteComment(Map<String, Object> map);
+	
+	void updateComment(Map<String, Object> map);
 
 }

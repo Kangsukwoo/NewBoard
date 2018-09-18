@@ -53,6 +53,7 @@ public class SampleServiceImpl implements SampleService {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("map", sampleDAO.selectBoard(map));
 		resultMap.put("list", sampleDAO.selectFileList(map));
+		resultMap.put("comment", sampleDAO.selectCommentList(map));
 
 		return resultMap;
 
@@ -68,6 +69,24 @@ public class SampleServiceImpl implements SampleService {
 	public void deleteBoard(Map<String, Object> map) {
 		sampleDAO.deleteBoard(map);
 
+	}
+	
+	@Override
+	public void writeComment(Map<String, Object> map) {
+		sampleDAO.insertComment(map);
+		
+	}
+
+	@Override
+	public void deleteComment(Map<String, Object> map) {
+		sampleDAO.deleteComment(map);
+		
+	}
+
+	@Override
+	public void updateComment(Map<String, Object> map) {
+		sampleDAO.updateComment(map);
+		
 	}
 
 }
