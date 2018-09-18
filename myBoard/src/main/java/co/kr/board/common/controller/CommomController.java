@@ -26,7 +26,7 @@ public class CommomController {
         String original_File_Name = (String)map.get("ORIGINAL_FILE_NAME");
         String stored_File_Name = (String)map.get("STORED_FILE_NAME");
          
-        byte[] fileByte = FileUtils.readFileToByteArray(new File("C:\\dev\\file\\"+stored_File_Name));
+        byte[] fileByte = FileUtils.readFileToByteArray(new File("/var/newBoard/upload/"+stored_File_Name));
          
         response.setContentType("application/octet-stream");
         response.setContentLength(fileByte.length);

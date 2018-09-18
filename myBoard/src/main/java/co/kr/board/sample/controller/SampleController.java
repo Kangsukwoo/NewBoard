@@ -1,5 +1,7 @@
 package co.kr.board.sample.controller;
 
+//배포 경로 : /var/lib/tomcat8/webapps
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
